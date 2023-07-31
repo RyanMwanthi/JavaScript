@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="page">Circle Calculation</p>
+    <div class="pi" id="pi">
+        3.142
+    </div>
+    <div class="r" id="r">
+        14
+    </div>
+
+    <div class="total" id="total" > </div>
+      <script>
+        let pi = 22/7;
+        let r= 15;
+        let area=pi*r*r;
+        console.log(area)
+
+        // using deument.get
+        let pie = document.getElementById("pi").innerText
+        let rad = document.getElementById("r").innerText;
+        let areaadd = pie + rad;
+        console.log(areaadd)
+
+        //Multiplying
+        let p = document.getElementById("pi").innerText
+        let ra = document.getElementById("r").innerText;
+        let areamul  = Number(p) * Number(rad) * Number(rad);
+        console.log(areamul)
+        document.getElementById("total").innerText = areamul
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>
