@@ -12,8 +12,8 @@
     <script>
         // Q1.
         let name = "  JOHn .";
-        let cleanName = name.toLowerCase();
-        let sname = cleanName.substring(0, 6)
+        let cName = name.trim().toLowerCase();
+        let sname=cName.slice(0,5)
         console.log(sname);
 
         //Question 2 
@@ -26,7 +26,7 @@
         let ans = Three.split(";");
         console.log(ans);
         console.log(ans.length);
-        
+
     </script>
 </body>
 
