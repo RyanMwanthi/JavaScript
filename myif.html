@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let number = 10;
+        if (number > 0) {
+            console.log("Positive number");
+            if (number % 2 == 0) {
+                console.log("even number");
+            } else {
+                console.log("odd number");
+            }
+        }else {
+            console.log("Negative number");
+        }
+
+        let num = 70;
+        if (num % 2 === 0) {
+            console.log(num + " is even");
+        } else {
+            console.log(num + " is odd");
+        }
+
+
+        let num1 = 40, num2 = 20, num3 = 30, num4 = 40;
+        let maxNum = Math.max(num1, num2, num3, num4);
+        console.log("largest number is " + maxNum);
+
+        let year = 2023;
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+            console.log(year + " is a leap year");
+        } else {
+            console.log(year + " is not a leap year");
+        }
+    </script>
+</body>
+
+</html>

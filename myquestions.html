@@ -13,19 +13,40 @@
         // Q1.
         let name = "  JOHn .";
         let cName = name.trim().toLowerCase();
-        let sname=cName.slice(0,5)
+        let sname = cName.slice(0, 5)
         console.log(sname);
 
         //Question 2 
         let dog = "The Dog Breed is German Shepherd";
-        let result = dog.substring(8, 23);
+        let result = dog.slice(8, 23);
         console.log(result);
+        // negative numbers
+        let dog2 = "The Dog Breed is German Shepherd";
+        let resu = dog2.slice(-24, -9);
+        console.log(resu);
 
         //Question 3
         let lazy = "The lazy dog; ran so fast; it hit the wall.";
         let ans = lazy.split(";");
         console.log(ans);
         console.log(ans.length);
+
+        let user = "BaZu1010"
+        let low = user.toLocaleLowerCase()
+        console.log(low)
+
+        let userr = "BaZu1010"
+        let loww = String(user).toLocaleLowerCase()
+        console.log(loww)
+
+        // Trying with numbers to lowercase
+        let num = 123;
+        let str = String(num).toLowerCase();
+        console.log(str);
+
+        let numm = 123;
+        let strr = String(numm).toUpperCase();
+        console.log(strr);
 
     </script>
 </body>
