@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Arrays ni lists in python
+        let country = ['ke', 'ug', 'tz', ['sa', 'ls', 'sz',]]
+        console.log(country[3][2])
+
+        // 1
+        let colors = ['red', 'green', 'blue'];
+        colors[1] = "purple"
+        colors.splice(2, 1, "Brown")
+        console.log(colors);
+
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let lengthOfNumbers = numbers.length;
+        console.log(lengthOfNumbers);
+
+        let languages = ['English', 'French', 'Swahili', 'German'];
+        languages.pop();
+        //removes the last
+        console.log(languages);
+
+        var num = [10, 20, 30];
+        num.shift();
+        //removes the first
+        console.log(num)
+        num.unshift(60)
+        //adds at the first 
+        console.log(num);
+
+        //concatination method
+        let col = ["grey", "maroon", "Indigo"]
+        let col2 = ["purple", "Sepia", "Black"]
+
+        let allcolors = col.concat(col2)
+        console.log(allcolors);
+
+        //array task 1
+        let num1 = [1, 2, 3];
+        let num2 = [4, 5, 6];
+        let combined = num1.concat(num2);
+        combined.shift();
+        console.log(combined);
+        
+
+       
+    </script>
+</body>
+
+</html>
