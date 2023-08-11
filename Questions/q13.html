@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Question 13</h1>
+    <script>
+        let remainingTries = 3;
+
+        function attemptLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email === 'admin@mail.com' && password === 'Admin@123') {
+                document.getElementById('message').textContent = 'Login is Successful';
+            } else {
+                remainingTries--;
+                if (remainingTries > 0) {
+                    document.getElementById('message').textContent = `Invalid username/password. Remaining tries: ${remainingTries}`;
+                } else {
+                    document.getElementById('message').textContent = 'You have been blocked.';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

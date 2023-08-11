@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        const correctPassword = "admin@123";
+        let remainingAttempts = 4;
+
+        function attemptLogin() {
+            const password = prompt('Enter the password:');
+
+            if (password === correctPassword) {
+                alert('Access granted!');
+            } else {
+                remainingAttempts--;
+                if (remainingAttempts > 0) {
+                    alert(`Incorrect password. You have ${remainingAttempts} attempts left.`);
+                    attemptLogin();
+                } else {
+                    alert('Access blocked. Please contact support.');
+                }
+            }
+        }
+
+        attemptLogin();
+    </script>
+</body>
+
+</html>

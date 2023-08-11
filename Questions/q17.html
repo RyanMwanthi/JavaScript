@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHIF, NSSF, and PAYEE Calculator</title>
+</head>
+<body>
+    <h1>NHIF, NSSF, and PAYEE Calculator</h1>
+    <div>
+        <label for="basicSalary">Enter basic salary (Kshs):</label>
+        <input type="number" id="basicSalary">
+    </div>
+    <div>
+        <label for="benefits">Enter benefits (Kshs):</label>
+        <input type="number" id="benefits">
+    </div>
+    <button onclick="calculateContributionsAndPayee()">Calculate Contributions and PAYEE</button>
+    <p id="nhifResult"></p>
+    <p id="nssfResult"></p>
+    <p id="payeeResult"></p>
+
+    <script>
+        function calculateContributionsAndPayee() {
+            const basicSalary = parseFloat(document.getElementById('basicSalary').value);
+            const benefits = parseFloat(document.getElementById('benefits').value);
+
+            console.log("basicSalary:", basicSalary);
+            console.log("benefits:", benefits);
+
+            const grossSalary = basicSalary + benefits;
+
+            const nssfContribution = calculateNSSFContribution(grossSalary);
+            const taxableIncome = grossSalary - nssfContribution;
+            const payee = calculatePayee(taxableIncome);
+
+            console.log("nssfContribution:", nssfContribution);
+            console.log("taxableIncome:", taxableIncome);
+            console.log("payee:", payee);
+
+            document.getElementById('nhifResult').textContent = `NHIF Contribution: ${nhifContribution} Kshs`;
+            document.getElementById('nssfResult').textContent = `NSSF Contribution: ${nssfContribution} Kshs`;
+            document.getElementById('payeeResult').textContent = `PAYEE: ${payee} Kshs`;
+        }
+
+        function calculateNSSFContribution(grossSalary) {
+            const nssfRate = 0.06;
+            const maxNSSFContribution = 18000;
+            return Math.min(grossSalary * nssfRate, maxNSSFContribution);
+        }
+
+        function calculatePayee(taxableIncome) {
+            let payee = 0;
+
+            if (taxableIncome > 24000) {
+                if (taxableIncome > 32000) {
+                    payee += (8333 * 0.25) + ((taxableIncome - 32000) * 0.3);
+                } else {
+                    payee += (8333 * 0.25);
+                }
+            } else if (taxableIncome > 2400) {
+                payee += (taxableIncome - 24000) * 0.1;
+            }
+
+            payee -= 2400;
+
+            return Math.max(payee, 0);
+        }
+    </script>
+</body>
+</html>

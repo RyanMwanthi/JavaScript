@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHIF Calculator</title>
+</head>
+
+<body>
+    <h1>Question 15 NHIF</h1>
+    <div>
+        <label for="basicSalary">Enter basic salary (Kshs):</label>
+        <input type="number" id="basicSalary">
+    </div>
+    <div>
+        <label for="benefits">Enter benefits (Kshs):</label>
+        <input type="number" id="benefits">
+    </div>
+    <button onclick="calculateNHIF()">Calculate NHIF</button>
+    <p id="nhifResult"></p>
+
+    <script>
+        function calculateNHIF() {
+            const basicSalary = parseFloat(document.getElementById('basicSalary').value);
+            const benefits = parseFloat(document.getElementById('benefits').value);
+
+            const grossSalary = basicSalary + benefits;
+
+            let nhifContribution;
+
+            if (grossSalary < 6000) {
+                nhifContribution = 0;
+            } else if (grossSalary < 8000) {
+                nhifContribution = 150;
+            } else if (grossSalary < 12000) {
+                nhifContribution = 300;
+            } else if (grossSalary < 15000) {
+                nhifContribution = 400;
+            } else if (grossSalary < 20000) {
+                nhifContribution = 500;
+            } else if (grossSalary < 25000) {
+                nhifContribution = 600;
+            } else if (grossSalary < 30000) {
+                nhifContribution = 750;
+            } else if (grossSalary < 35000) {
+                nhifContribution = 850;
+            } else if (grossSalary < 40000) {
+                nhifContribution = 900;
+            } else if (grossSalary < 45000) {
+                nhifContribution = 950;
+            } else if (grossSalary < 50000) {
+                nhifContribution = 1000;
+            } else if (grossSalary < 60000) {
+                nhifContribution = 1100;
+            } else if (grossSalary < 70000) {
+                nhifContribution = 1200;
+            } else if (grossSalary < 80000) {
+                nhifContribution = 1300;
+            } else if (grossSalary < 90000) {
+                nhifContribution = 1400;
+            } else if (grossSalary < 100000) {
+                nhifContribution = 1500;
+            } else {
+                nhifContribution = 1700;
+            }
+
+            document.getElementById('nhifResult').textContent = `NHIF Contribution: ${nhifContribution} Kshs`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Questions 7</h1>
+    <script>
+       function calculateGrade() {
+            const marks = parseFloat(document.getElementById('marks').value);
+
+            let grade;
+
+            if (marks > 100 || marks < 0) {
+                grade = "Invalid marks entered";
+            } else if (marks > 79) {
+                grade = "A";
+            } else if (marks >= 60) {
+                grade = "B";
+            } else if (marks >= 50) {
+                grade = "C";
+            } else if (marks >= 40) {
+                grade = "D";
+            } else {
+                grade = "E";
+            }
+
+            document.getElementById('result').textContent = `Grade: ${grade}`;
+            console.log(grade); 
+        }
+    </script>
+</body>
+</html>

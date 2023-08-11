@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Question 3</h1>
+    <script>
+        
+        let phoneNumber = prompt("Enter phone number:");
+
+        // Remove any non-digit characters
+        phoneNumber = phoneNumber.replace(/\D/g, '');
+
+        // Check if the number starts with the allowed prefixes
+        if (phoneNumber.startsWith("07")) {
+            phoneNumber = "+254" + phoneNumber.substr(1);
+        } else if (phoneNumber.startsWith("71")) {
+            phoneNumber = "+254" + phoneNumber;
+        } else if (phoneNumber.startsWith("254") || phoneNumber.startsWith("01")) {
+            phoneNumber = "+" + phoneNumber;
+        } else {
+            phoneNumber = "Invalid phone number";
+        }
+
+        console.log(`Formatted phone number: ${phoneNumber}`);
+
+
+    </script>
+</body>
+
+</html>

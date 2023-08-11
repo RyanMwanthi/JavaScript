@@ -18,7 +18,7 @@
             } else {
                 console.log("odd number");
             }
-        }else {
+        } else {
             console.log("Negative number");
         }
 
@@ -30,16 +30,38 @@
         }
 
 
-        let num1 = 40, num2 = 20, num3 = 30, num4 = 40;
-        let maxNum = Math.max(num1, num2, num3, num4);
+
+        let num1 = 10;
+        let num2 = 20;
+        let num3 = 30;
+        let num4 = 40;
+        let maxNum;
+
+        if (num1 > num2 && num1 > num3 && num1 > num4) {
+            maxNum = num1;
+        } else if (num2 > num1 && num2 > num3 && num2 > num4) {
+            maxNum = num2;
+        } else if (num3 > num1 && num3 > num2 && num3 > num4) {
+            maxNum = num3;
+        } else {
+            maxNum = num4;
+        }
         console.log("largest number is " + maxNum);
 
-        let year = 2023;
-        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+
+
+        let year = 2000;
+        if ((year % 4 === 0 && year % 100 === 0) || year % 400 === 0) {
             console.log(year + " is a leap year");
         } else {
             console.log(year + " is not a leap year");
         }
+
+
+        // Boolean Logic
+        
+
+        
     </script>
 </body>
 
